@@ -12,15 +12,8 @@ const USERS_FILE = path.join(__dirname, 'users.txt');
 const ITEMS_FILE = path.join(__dirname, 'items.json');
 const CHAT_FILE = path.join(__dirname, 'chat.json');
 
-// Gerekli Veri Dosyalarını Oluştur
-if (!fs.existsSync(USERS_FILE)) fs.writeFileSync(USERS_FILE, '', 'utf8');
-
 if (!fs.existsSync(ITEMS_FILE)) {
-    const defaultItems = [
-        { id: 1, title: "GTA V Legacy / Online Mod Pack", img: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=500", link: "https://google.com", category: "games" },
-        { id: 2, title: "FPS Boost & Optimization Script", img: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=500", link: "https://google.com", category: "software" },
-        { id: 3, title: "Vortex Hardware Spoofer VIP", img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500", link: "https://google.com", category: "premium" }
-    ];
+    const defaultItems = []; // Örnek içerikler kaldırıldı, liste boş başlatılıyor
     fs.writeFileSync(ITEMS_FILE, JSON.stringify(defaultItems, null, 2), 'utf8');
 }
 
