@@ -482,18 +482,28 @@
         }, 4000);
     }
 
-    function sendSupport() {
-        const input = document.getElementById('support-input');
-        if(!input.value.trim()) return;
-        
-        const box = document.getElementById('support-box');
-        box.innerHTML += `<div class="chat-msg"><b>Sen:</b> ${input.value}</div>`;
-        input.value = '';
+// İÇERİK SİLME İŞLEMİ
+    async function deleteItem(id) {
+        if (!confirm("Bu içeriği silmek istediğinizden emin misiniz?")) return;
 
-        setTimeout(() => {
-            box.innerHTML += `<div class="chat-msg"><b class="neon-admin">ShadowX:</b> Talebiniz alındı! En kısa sürede ilgileniyoruz.</div>`;
-            box.scrollTop = box.scrollHeight;
-        }, 1000);
+        try {
+            const res = await fetch('/api/items/delete', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    id: id,
+                    username: currentUser.username,
+                    email: currentUser.email
+                })
+            });
+            const data = await res.json();
+            alert(data.message);
+            if (data.success) {
+                loadItems(); // İçerikleri yeniden yükle
+            }
+        } catch (e) {
+            alert("Silme işlemi gerçekleşemedi!");
+        }
     }
 </script>
 </body>
