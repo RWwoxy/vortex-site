@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vortex Oyun Hizmetleri | VIP Gaming Hub</title>
-    <!-- Fontlar & İkonlar -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -32,7 +31,6 @@
             overflow-x: hidden;
         }
 
-        /* NEON ADMIN EFEKTİ */
         .neon-admin {
             font-family: 'Orbitron', sans-serif;
             font-weight: 900;
@@ -46,11 +44,8 @@
             letter-spacing: 1px;
         }
 
-        @keyframes shine {
-            to { background-position: 200% center; }
-        }
+        @keyframes shine { to { background-position: 200% center; } }
 
-        /* Header / Banner */
         header { 
             background: rgba(10, 10, 15, 0.95);
             backdrop-filter: blur(10px);
@@ -71,7 +66,6 @@
             letter-spacing: 2px;
         }
 
-        /* Cam Efektli Paneller */
         .glass-panel {
             background: var(--panel-bg);
             backdrop-filter: blur(12px);
@@ -80,14 +74,12 @@
             padding: 20px;
             margin-bottom: 20px;
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-            transition: all 0.3s ease;
         }
 
         .container { display: flex; flex-wrap: wrap; max-width: 1450px; margin: 25px auto; gap: 20px; padding: 0 15px; }
         .sidebar { flex: 1; min-width: 300px; }
         .main-content { flex: 3; min-width: 320px; }
 
-        /* Formlar & Inputlar */
         h3 { font-family: 'Orbitron', sans-serif; margin-bottom: 15px; font-size: 1.1rem; color: #fff; display: flex; align-items: center; gap: 10px; }
         h3 i { color: var(--neon-cyan); }
 
@@ -100,7 +92,6 @@
             color: #fff; 
             border-radius: 6px; 
             outline: none;
-            transition: 0.3s;
         }
 
         input:focus, select:focus {
@@ -121,7 +112,6 @@
             font-family: 'Orbitron', sans-serif;
             border-radius: 6px;
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         button:hover { 
@@ -129,7 +119,6 @@
             box-shadow: 0 0 20px var(--neon-cyan); 
         }
 
-        /* Sekme Butonları */
         .tabs { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
         .tab-btn { 
             flex: 1; 
@@ -150,7 +139,6 @@
             box-shadow: 0 0 15px rgba(255, 0, 85, 0.4);
         }
 
-        /* Kart Izgaraları */
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
         
         .item-card { 
@@ -158,34 +146,24 @@
             border: 1px solid rgba(0, 243, 255, 0.2); 
             border-radius: 10px; 
             overflow: hidden; 
-            transition: 0.3s;
             display: flex;
             flex-direction: column;
-        }
-
-        .item-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--neon-cyan);
-            box-shadow: 0 5px 25px rgba(0, 243, 255, 0.3);
         }
 
         .item-card img { width: 100%; height: 160px; object-fit: cover; }
         .item-card-body { padding: 15px; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; }
         .item-card h4 { font-family: 'Orbitron', sans-serif; font-size: 1rem; margin-bottom: 10px; color: #fff; }
 
-        /* TikTok Kilit Ekranı */
         .lock-overlay { 
             text-align: center; 
             padding: 40px 20px; 
             background: rgba(10, 10, 20, 0.9); 
             border: 2px dashed var(--neon-pink); 
             border-radius: 12px; 
-            box-shadow: 0 0 30px rgba(255, 0, 85, 0.2);
         }
 
-        /* Chat / Sohbet Kutuları */
         .chat-box { 
-            height: 200px; 
+            height: 250px; 
             overflow-y: auto; 
             background: rgba(0, 0, 0, 0.5); 
             border: 1px solid rgba(255, 255, 255, 0.1); 
@@ -213,16 +191,6 @@
             color: #fff;
             margin-left: 5px;
         }
-
-        .img-preview {
-            width: 100%;
-            max-height: 120px;
-            object-fit: cover;
-            border-radius: 6px;
-            margin-top: 5px;
-            display: none;
-            border: 1px solid var(--neon-cyan);
-        }
     </style>
 </head>
 <body>
@@ -232,10 +200,8 @@
 </header>
 
 <div class="container">
-    <!-- SOL PANEL -->
     <div class="sidebar">
-        
-        <!-- Giriş ve Kayıt Paneli -->
+        <!-- Giriş Paneli -->
         <div id="auth-section" class="glass-panel">
             <h3><i class="fa-solid fa-shield-halved"></i> Bağlantı Paneli</h3>
             <input type="text" id="username" placeholder="Kullanıcı Adı">
@@ -251,7 +217,7 @@
             <button onclick="logout()" style="background: var(--neon-pink);">Güvenli Çıkış</button>
         </div>
 
-        <!-- Sunucu / Yönetici Bilgisi -->
+        <!-- Sunucu Durumu -->
         <div class="glass-panel">
             <h3><i class="fa-solid fa-server"></i> Sunucu Durumu</h3>
             <p style="margin-bottom: 8px;"><b>Sahipler:</b></p>
@@ -264,48 +230,40 @@
             </div>
         </div>
 
-        <!-- Destek Ekibi (Canlı Destek) -->
+        <!-- Canlı Destek -->
         <div class="glass-panel">
             <h3><i class="fa-solid fa-headset"></i> Destek Ekibi</h3>
             <p style="font-size: 0.85rem; color: #aaa; margin-bottom: 10px;">Yetkililerimiz (NirvanaX & ShadowX) 7/24 aktiftir.</p>
-            <div id="support-box" class="chat-box">
+            <div id="support-box" class="chat-box" style="height:150px;">
                 <div class="chat-msg"><b class="neon-admin">NirvanaX:</b> Merhaba! Bir sorunun veya isteğin var mı?</div>
             </div>
             <input type="text" id="support-input" placeholder="Destek ekibine yaz...">
             <button onclick="sendSupport()" style="background: linear-gradient(45deg, var(--neon-purple), var(--neon-pink));">Mesaj Gönder</button>
         </div>
-
     </div>
 
-    <!-- SAĞ ANA İÇERİK ALANI -->
     <div class="main-content">
-        
-        <!-- Üye Olmayanlar İçin Görünüm -->
         <div id="guest-msg" class="glass-panel" style="text-align: center; padding: 60px 20px;">
             <i class="fa-solid fa-lock" style="font-size: 60px; color: var(--neon-cyan); margin-bottom: 20px;"></i>
             <h2 style="font-family: 'Orbitron'; font-size: 1.8rem; margin-bottom: 10px;">Erişim Engellendi!</h2>
             <p style="color: #aaa;">Oyunları, özel yazılımları ve topluluğu görmek için lütfen sol panelden giriş yapın veya kayıt olun.</p>
         </div>
 
-        <!-- Üye İçeriği -->
         <div id="app-content" style="display:none;">
-            
-            <!-- ADMIN İÇERİK EKLEME PANELİ (SADECE ADMİNLER GÖRÜR) -->
+            <!-- ADMIN İÇERİK YÖNETİMİ -->
             <div id="admin-panel" class="glass-panel" style="display:none; border-color: var(--neon-pink);">
                 <h3 style="color: var(--neon-pink);"><i class="fa-solid fa-folder-plus"></i> Admin İçerik Yönetimi</h3>
-                <input type="text" id="item-title" placeholder="İçerik/Oyun Adı (Örn: GTA V Legacy)">
-                <input type="url" id="item-img" placeholder="Afiş/Görsel URL Linki (https://...)" oninput="previewImg(this.value)">
-                <img id="img-preview-box" class="img-preview" alt="Afiş Önizleme">
+                <input type="text" id="item-title" placeholder="İçerik/Oyun Adı">
+                <input type="url" id="item-img" placeholder="Afiş/Görsel URL Linki (https://...)">
                 <input type="url" id="item-link" placeholder="İndirme Linki (URL)">
                 <select id="item-category">
                     <option value="games">Bedava Oyunlar</option>
                     <option value="software">Özel Yazılımlar (TikTok Takibi İster)</option>
                     <option value="premium">Premium Uygulamalar (TikTok Takibi İster)</option>
                 </select>
-                <button onclick="addItem()" style="background: var(--neon-pink);">Sisteme Ekle ve Yayınla</button>
+                <button onclick="addItem()" style="background: var(--neon-pink);">Sisteme Ekle ve Herkese Yayınla</button>
             </div>
 
-            <!-- Kategori Sekmeleri -->
             <div class="tabs">
                 <button class="tab-btn active" onclick="switchTab('games', event)"><i class="fa-solid fa-gamepad"></i> Bedava Oyunlar</button>
                 <button class="tab-btn" onclick="switchTab('software', event)"><i class="fa-solid fa-code"></i> Özel Yazılımlar</button>
@@ -313,31 +271,27 @@
                 <button class="tab-btn" onclick="switchTab('community', event)"><i class="fa-solid fa-users"></i> Topluluk Sohbeti</button>
             </div>
 
-            <!-- TikTok Takip Kilit Ekranı -->
             <div id="tiktok-lock" class="lock-overlay" style="display:none;">
                 <i class="fa-brands fa-tiktok" style="font-size: 60px; color: var(--neon-pink); margin-bottom: 15px;"></i>
                 <h2 style="font-family: 'Orbitron'; margin-bottom: 10px;">Erişim İzni Gerekiyor!</h2>
                 <p style="color: #aaa; margin-bottom: 20px;">Özel Yazılımlar ve Premium içerikleri görebilmek için TikTok hesabımızı takip etmelisin.</p>
-                
-                <a id="tt-link" href="https://www.tiktok.com" target="_blank" onclick="startTTCheck()" style="display:inline-block; text-decoration:none;">
+                <a href="https://www.tiktok.com" target="_blank" onclick="startTTCheck()" style="display:inline-block; text-decoration:none;">
                     <button style="width: auto; padding: 14px 28px; background: var(--neon-pink);"><i class="fa-brands fa-tiktok"></i> TikTok'ta Bizi Takip Et</button>
                 </a>
                 <p id="tt-status" style="margin-top: 15px; font-weight: bold; color: var(--neon-cyan);"></p>
             </div>
 
-            <!-- Oyun/Yazılım Kartları Izgarası -->
             <div id="items-grid" class="grid"></div>
 
-            <!-- Topluluk Konuşma Alanı -->
+            <!-- TOPLULUK SOHBETİ -->
             <div id="community-section" class="glass-panel" style="display:none;">
                 <h3><i class="fa-solid fa-comments"></i> Vortex Genel Topluluk Sohbeti</h3>
-                <div id="community-chat" class="chat-box" style="height: 300px;"></div>
+                <div id="community-chat" class="chat-box" style="height: 320px;"></div>
                 <div style="display: flex; gap: 10px;">
                     <input type="text" id="chat-input" placeholder="Topluluğa bir mesaj yaz..." style="margin:0;">
                     <button onclick="sendCommunityChat()" style="width: 120px; margin:0;"><i class="fa-solid fa-paper-plane"></i></button>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
@@ -346,31 +300,14 @@
     let currentUser = null;
     let isTTFollowed = false;
     let activeTab = 'games';
+    let globalItems = [];
 
-    // Kayıtlı İçerikler (Yerel Bellekte Saklanır)
-    let items = JSON.parse(localStorage.getItem('vortex_items_list')) || [
-        { title: "GTA V Legacy / Online Mod Pack", img: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=500", link: "https://google.com", category: "games" },
-        { title: "FPS Boost & Optimization Script", img: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=500", link: "https://google.com", category: "software" },
-        { title: "Vortex Hardware Spoofer VIP", img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500", link: "https://google.com", category: "premium" }
-    ];
-
-    // Görsel Linki Önizleme
-    function previewImg(url) {
-        const imgBox = document.getElementById('img-preview-box');
-        if(url.trim() !== '') {
-            imgBox.src = url;
-            imgBox.style.display = 'block';
-        } else {
-            imgBox.style.display = 'none';
-        }
-    }
-
-    // Giriş / Kayıt İşlemleri
+    // Giriş/Kayıt
     async function handleAuth(type) {
         const username = document.getElementById('username').value.trim();
         const email = document.getElementById('email').value.trim();
 
-        if(!username || !email) return alert("Lütfen kullanıcı adı ve e-postayı eksiksiz girin!");
+        if(!username || !email) return alert("Lütfen kullanıcı adı ve e-postayı doldurun!");
 
         try {
             const res = await fetch(`/api/${type}`, {
@@ -385,24 +322,28 @@
                 currentUser = data;
                 document.getElementById('auth-section').style.display = 'none';
                 document.getElementById('user-info').style.display = 'block';
-                
-                const nameSpan = document.getElementById('display-username');
-                nameSpan.innerText = data.username;
-
+                document.getElementById('display-username').innerText = data.username;
                 document.getElementById('guest-msg').style.display = 'none';
                 document.getElementById('app-content').style.display = 'block';
 
                 if(data.isAdmin) {
-                    nameSpan.classList.add('neon-admin');
+                    document.getElementById('display-username').classList.add('neon-admin');
                     document.getElementById('admin-badge-area').innerHTML = `<span class="badge">KURUCU / ADMIN</span>`;
                     document.getElementById('admin-panel').style.display = 'block';
                 }
 
-                renderItems();
+                loadItems();
+                loadChat();
                 fetchStats();
+
+                // Her 3 saniyede bir sohbeti ve oyunları sunucudan otomatik çek (Canlı Senkronizasyon)
+                setInterval(() => {
+                    loadChat();
+                    loadItems();
+                }, 3000);
             }
         } catch(err) {
-            alert("Sunucu ile bağlantı kurulamadı. Sunucunun açık olduğundan emin olun!");
+            alert("Sunucuya bağlanılamadı!");
         }
     }
 
@@ -412,55 +353,25 @@
         try {
             const res = await fetch('/api/stats');
             const data = await res.json();
-            document.getElementById('total-count').innerText = data.totalUsers || 2;
+            document.getElementById('total-count').innerText = data.totalUsers || 0;
             document.getElementById('online-count').innerText = Math.floor(Math.random() * 5) + 2;
-        } catch(e) {
-            document.getElementById('total-count').innerText = '2';
-        }
+        } catch(e) {}
     }
 
-    // Sekmeler Arası Geçiş (Admin Kontrollü)
-    function switchTab(tab, evt) {
-        activeTab = tab;
-        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-        if(evt) evt.currentTarget.classList.add('active');
-
-        document.getElementById('community-section').style.display = 'none';
-        document.getElementById('tiktok-lock').style.display = 'none';
-        document.getElementById('items-grid').style.display = 'none';
-
-        if(tab === 'community') {
-            document.getElementById('community-section').style.display = 'block';
-        } 
-        // KONTROL: Eğer admin DEĞİLSE ve TikTok takip etmediyse kilidi göster
-        else if((tab === 'software' || tab === 'premium') && !isTTFollowed && (!currentUser || !currentUser.isAdmin)) {
-            document.getElementById('tiktok-lock').style.display = 'block';
-        } 
-        else {
-            document.getElementById('items-grid').style.display = 'grid';
+    // SUNUCUDAN İÇERİKLERİ ÇEK (HERKESTE ORTAK GÖRÜNÜR)
+    async function loadItems() {
+        try {
+            const res = await fetch('/api/items');
+            globalItems = await res.json();
             renderItems();
-        }
+        } catch(e) {}
     }
 
-    // TikTok Takip Doğrulama
-    function startTTCheck() {
-        const status = document.getElementById('tt-status');
-        status.innerText = "TikTok bağlantısı kontrol ediliyor (5 saniye)...";
-
-        setTimeout(() => {
-            isTTFollowed = true;
-            status.innerText = "✓ Takip Doğrulandı! Tüm içeriklerin kilidi açıldı.";
-            status.style.color = "var(--neon-green)";
-            setTimeout(() => { switchTab(activeTab); }, 1200);
-        }, 5000);
-    }
-
-    // İçerikleri Ekrana Bas
     function renderItems() {
         const grid = document.getElementById('items-grid');
         grid.innerHTML = '';
         
-        const filtered = items.filter(i => i.category === activeTab);
+        const filtered = globalItems.filter(i => i.category === activeTab);
         
         if(filtered.length === 0) {
             grid.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: #888;">Bu kategoride henüz içerik bulunmuyor.</p>`;
@@ -482,42 +393,104 @@
         });
     }
 
-    // Admin İçerik Ekleme (Resim Linki İle)
-    function addItem() {
+    // ADMİN İÇERİK EKLEME (TÜM KULLANICILARA GÖNDERİLİR)
+    async function addItem() {
         const title = document.getElementById('item-title').value.trim();
         const img = document.getElementById('item-img').value.trim();
         const link = document.getElementById('item-link').value.trim();
         const category = document.getElementById('item-category').value;
 
-        if(!title || !img || !link) return alert("Lütfen içerik adı, görsel linki ve indirme linkini eksiksiz doldurun!");
+        if(!title || !img || !link) return alert("Lütfen tüm alanları doldurun!");
 
-        items.push({ title, img, link, category });
-        localStorage.setItem('vortex_items_list', JSON.stringify(items));
-        alert("Başarılı: İçerik Vortex platformuna eklendi!");
-        
-        document.getElementById('item-title').value = '';
-        document.getElementById('item-img').value = '';
-        document.getElementById('item-link').value = '';
-        document.getElementById('img-preview-box').style.display = 'none';
-
-        renderItems();
+        try {
+            const res = await fetch('/api/items', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ title, img, link, category })
+            });
+            const data = await res.json();
+            alert(data.message);
+            if(data.success) {
+                document.getElementById('item-title').value = '';
+                document.getElementById('item-img').value = '';
+                document.getElementById('item-link').value = '';
+                loadItems();
+            }
+        } catch(e) {
+            alert("İçerik eklenirken bir hata oluştu!");
+        }
     }
 
-    // Topluluk Sohbeti
-    function sendCommunityChat() {
+    // SUNUCUDAN SOHBETİ ÇEK VE CANLI GÖSTER
+    async function loadChat() {
+        try {
+            const res = await fetch('/api/chat');
+            const messages = await res.json();
+            const chatBox = document.getElementById('community-chat');
+            
+            chatBox.innerHTML = '';
+            messages.forEach(msg => {
+                const userClass = msg.isAdmin ? 'neon-admin' : '';
+                const badge = msg.isAdmin ? '<span class="badge">ADMIN</span>' : '';
+                chatBox.innerHTML += `<div class="chat-msg"><b class="${userClass}">${msg.username}</b> ${badge}: ${msg.message}</div>`;
+            });
+        } catch(e) {}
+    }
+
+    // TOPLULUK SOHBETİNE MESAJ GÖNDER
+    async function sendCommunityChat() {
         const input = document.getElementById('chat-input');
-        if(!input.value.trim()) return;
-        
-        const chatBox = document.getElementById('community-chat');
-        const userClass = (currentUser && currentUser.isAdmin) ? 'neon-admin' : '';
-        const badge = (currentUser && currentUser.isAdmin) ? '<span class="badge">ADMIN</span>' : '';
+        const message = input.value.trim();
+        if(!message) return;
 
-        chatBox.innerHTML += `<div class="chat-msg"><b class="${userClass}">${currentUser.username}</b> ${badge}: ${input.value}</div>`;
-        input.value = '';
-        chatBox.scrollTop = chatBox.scrollHeight;
+        try {
+            await fetch('/api/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    username: currentUser.username,
+                    message: message,
+                    isAdmin: currentUser.isAdmin
+                })
+            });
+            input.value = '';
+            loadChat();
+        } catch(e) {}
     }
 
-    // Canlı Destek
+    function switchTab(tab, evt) {
+        activeTab = tab;
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        if(evt) evt.currentTarget.classList.add('active');
+
+        document.getElementById('community-section').style.display = 'none';
+        document.getElementById('tiktok-lock').style.display = 'none';
+        document.getElementById('items-grid').style.display = 'none';
+
+        if(tab === 'community') {
+            document.getElementById('community-section').style.display = 'block';
+            loadChat();
+        } 
+        else if((tab === 'software' || tab === 'premium') && !isTTFollowed && (!currentUser || !currentUser.isAdmin)) {
+            document.getElementById('tiktok-lock').style.display = 'block';
+        } 
+        else {
+            document.getElementById('items-grid').style.display = 'grid';
+            renderItems();
+        }
+    }
+
+    function startTTCheck() {
+        const status = document.getElementById('tt-status');
+        status.innerText = "TikTok bağlantısı kontrol ediliyor...";
+        setTimeout(() => {
+            isTTFollowed = true;
+            status.innerText = "✓ Takip Doğrulandı! Tüm içeriklerin kilidi açıldı.";
+            status.style.color = "var(--neon-green)";
+            setTimeout(() => { switchTab(activeTab); }, 1200);
+        }, 4000);
+    }
+
     function sendSupport() {
         const input = document.getElementById('support-input');
         if(!input.value.trim()) return;
@@ -527,7 +500,7 @@
         input.value = '';
 
         setTimeout(() => {
-            box.innerHTML += `<div class="chat-msg"><b class="neon-admin">ShadowX:</b> Talebiniz alındı! En kısa sürede sizinle ilgileniyoruz.</div>`;
+            box.innerHTML += `<div class="chat-msg"><b class="neon-admin">ShadowX:</b> Talebiniz alındı! En kısa sürede ilgileniyoruz.</div>`;
             box.scrollTop = box.scrollHeight;
         }, 1000);
     }
