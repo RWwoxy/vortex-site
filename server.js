@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 3000;
 
 // SUPABASE KALICI VERİTABANI BAĞLANTISI
 const SUPABASE_URL = "https://dhzpvbmecmaukoxjnecc.supabase.co";
-const SUPABASE_KEY = "sb_secret_5whLfogpF3mXuWa4mZf2PA_6XIxyvlU"; 
+const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRoenB2Ym1lY21hdWtveGpuZWNjIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4NjQ3MDcyMywiZXhwIjoyMTAyMDQ2NzIzfQ.uyCyNjs1KMTzqVmbXVGJOftgshIiDJzo1AF7-P_x1vk"; 
 
 const headers = {
     'apikey': SUPABASE_KEY,
