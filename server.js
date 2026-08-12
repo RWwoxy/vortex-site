@@ -135,6 +135,30 @@ app.post('/api/chat', (req, res) => {
     }
 });
 
+
 app.listen(PORT, () => {
     console.log(`>>> VORTEX SİSTEMİ AKTİF (Port: ${PORT})`);
+});
+
+// İÇERİK SİLME (Sadece Yetkili Adminler İçin)
+app.post('/api/items/delete', (req, res) => {
+    try {
+        const { id, username, email } = req.body;
+
+        // Adminlik Doğrulaması (NirvanaX ve ShadowX)
+        const isAdmin = (username === 'NirvanaX' && email === 'sancaktaraydin66@gmail.com') ||
+                        (username === 'ShadowX' && email === 'kadirrr13aydin@gmail.com');
+
+        if (!isAdmin) {
+            return res.status(403).json({ success: false, message: 'Bu işlemi yapmaya yetkiniz yok!' });
+        }
+
+        let items = JSON.parse(fs.readFileSync(ITEMS_FILE, 'utf8'));
+        items = items.filter(item => item.id !== id);
+
+        fs.writeFileSync(ITEMS_FILE, JSON.stringify(items, null, 2), 'utf8');
+        res.json({ success: true, message: 'İçerik başarıyla silindi!' });
+    } catch (err) {
+        res.status(500).json({ success: false, message: 'Silme işlemi sırasında hata oluştu!' });
+    }
 });
